@@ -1,10 +1,6 @@
-FROM node:14
+FROM nginx:latest
 
 WORKDIR /usr/src/web
 
-COPY package*.json ./
-RUN npm install
-
-EXPOSE 8080
-
-CMD [ "npm", "start" ]
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY . ./

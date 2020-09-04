@@ -3,3 +3,8 @@ services:
   web:
     build: .
     image: "cgwelcome-blog/web"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - .:/usr/src/web
