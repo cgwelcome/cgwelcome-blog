@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: "cgwelcome-blog/web"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/usr/src/web
+      - web_node_modules:/usr/src/web/node_modules
+
+volumes:
+  web_node_modules:
