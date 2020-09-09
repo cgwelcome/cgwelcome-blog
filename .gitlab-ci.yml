@@ -1,0 +1,8 @@
+default:
+  before_script:
+    - docker info
+
+staging:
+  script:
+    - docker build -t cgwelcome-blog/web .
+    - docker run -d -p 80:80 cgwelcome-blog/web
